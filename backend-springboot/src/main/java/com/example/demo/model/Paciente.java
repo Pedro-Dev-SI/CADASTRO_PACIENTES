@@ -28,7 +28,7 @@ public class Paciente {
 	private String sobrenome;
 	
 	@Column(name = "data_nascimento")
-	private Date data_nascimento;
+	private String data_nascimento;
 	
 	@Column(name = "peso")
 	private double peso;
@@ -45,7 +45,7 @@ public class Paciente {
 	}
 	
 	//CONSTRUTOR COM PARÂMETROS
-	public Paciente(long id, String cpf, String primeiro_nome, String sobrenome, Date data_nascimento, double peso, double altura, String uf) {
+	public Paciente(long id, String cpf, String primeiro_nome, String sobrenome, String data_nascimento, double peso, double altura, String uf) {
 		super();
 		this.id = id;
 		this.cpf = cpf;
@@ -83,10 +83,10 @@ public class Paciente {
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
-	public Date getData_nascimento() {
+	public String getData_nascimento() {
 		return data_nascimento;
 	}
-	public void setData_nascimento(Date data_nascimento) {
+	public void setData_nascimento(String data_nascimento) {
 		this.data_nascimento = data_nascimento;
 	}
 	public double getPeso() {

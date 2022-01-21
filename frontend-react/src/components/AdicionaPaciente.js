@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PacienteService from '../services/PacienteService';
+import InputMask from 'react-input-mask';
 
 export default class AdicionaPaciente extends Component {
 
@@ -91,27 +92,27 @@ export default class AdicionaPaciente extends Component {
                          <div className="form-group">
                            <label>Primeiro nome: </label>
                            <input name="primeiro_nome" className="form-control" placeholder="Primeiro nome" 
-                           value={this.state.primeiro_nome} onChange={this.changePnomeHandler}/>
+                           value={this.state.primeiro_nome} onChange={this.changePnomeHandler} required/>
                          </div>
 
                          {/*Input do sobrenome do paciente*/}
                          <div className="form-group">
                            <label>Sobrenome: </label>
                            <input name="sobrenome" className="form-control" placeholder="Sobrenome" 
-                           value={this.state.sobrenome} onChange={this.changeSobrenomeHandler}/>
+                           value={this.state.sobrenome} onChange={this.changeSobrenomeHandler} required/>
                          </div>
 
                          {/*Input do CPF do paciente*/}
                          <div className="form-group">
                            <label>CPF: </label>
-                           <input name="cpf" className="form-control" placeholder="CPF"
-                           value={this.state.cpf} onChange={this.changeCpfHandler}/>
+                           <InputMask mask="999.999.999-99" name="cpf" className="form-control" placeholder="CPF"
+                           value={this.state.cpf} onChange={this.changeCpfHandler} required/>
                          </div>
 
                          {/*Input da data de nascimento do paciente*/}
                          <div className="form-group">
                            <label>Data de nascimento: </label>
-                           <input name="data_nascimento" className="form-control" placeholder="Data de nascimento"
+                           <InputMask mask="99/99/9999" name="data_nascimento" className="form-control" placeholder="Data de nascimento"
                            value={this.state.data_nascimento} onChange={this.changeDataNascimentoHandler}/>
                          </div>
 
